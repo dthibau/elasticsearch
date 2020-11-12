@@ -56,7 +56,7 @@ public class Ingest {
 						+ "    \"data\" : \"" + encodedString + "\"\n}");
 				HttpEntity entity = new NStringEntity(sbf.toString(), ContentType.APPLICATION_JSON);
 				try {
-					Request postRequest = new Request("POST", "/" + index + "/doc/?pipeline=attachment");
+					Request postRequest = new Request("POST", "/" + index + "/_doc/?pipeline=attachment");
 					postRequest.setEntity(entity);
 					Response indexResponse = restClient.performRequest(postRequest);
 
