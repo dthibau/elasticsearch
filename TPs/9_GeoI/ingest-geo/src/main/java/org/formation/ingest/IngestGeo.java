@@ -54,7 +54,7 @@ public class IngestGeo {
 					HttpEntity entity = new NStringEntity("{\n" + "    \"message\" : \"" + sCurrentLine + "\"\n" + "}",
 							ContentType.APPLICATION_JSON);
 					try {
-						Request postRequest = new Request("POST", "/" + index + "/doc/?pipeline=access_log");
+						Request postRequest = new Request("POST", "/" + index + "/_doc/?pipeline=access_log");
 						postRequest.setEntity(entity);
 						Response indexResponse = restClient.performRequest(postRequest);
 
